@@ -25,7 +25,7 @@ public class GifServer
 
         while (true)
         {
-            HttpListenerContext context = listener.GetContext(); // Blokirajući poziv
+            HttpListenerContext context = listener.GetContext();
             Thread thread = new Thread(() => HandleRequest(context));
             thread.Start();
         }
@@ -33,7 +33,7 @@ public class GifServer
 
     private void HandleRequest(HttpListenerContext context)
     {
-        string filename = context.Request.Url.AbsolutePath.Substring(1); // Skidanje početne kose crte
+        string filename = context.Request.Url.AbsolutePath.Substring(1); 
         string rootDirectory = Directory.GetCurrentDirectory();
 
         Console.WriteLine(rootDirectory);
