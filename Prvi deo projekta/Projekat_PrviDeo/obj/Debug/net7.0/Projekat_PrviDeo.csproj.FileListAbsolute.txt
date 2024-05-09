@@ -1,0 +1,14 @@
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.AssemblyInfoInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.AssemblyInfo.cs
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.csproj.CoreCompileInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\bin\Debug\net7.0\Projekat_PrviDeo.exe
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\bin\Debug\net7.0\Projekat_PrviDeo.deps.json
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\bin\Debug\net7.0\Projekat_PrviDeo.runtimeconfig.json
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\bin\Debug\net7.0\Projekat_PrviDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\bin\Debug\net7.0\Projekat_PrviDeo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\refint\Projekat_PrviDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.genruntimeconfig.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\ref\Projekat_PrviDeo.dll
