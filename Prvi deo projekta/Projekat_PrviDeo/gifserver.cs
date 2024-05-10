@@ -2,20 +2,20 @@
 using System.IO;
 using System.Net;
 using System.Threading;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 
 namespace Projekat_PrviDeo
 {
     public class GifServer
     {
         private HttpListener listener;
-        private Dictionary<string, byte[]> cache;
+        private ConcurrentDictionary<string, byte[]> cache;
 
         public GifServer()
         {
             listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:5050/");
-            cache = new Dictionary<string, byte[]>();
+            cache = new ConcurrentDictionary<string, byte[]>();
         }
 
         public void Start()
@@ -25,44 +25,44 @@ namespace Projekat_PrviDeo
 
             while (true)
             {
-                HttpListenerContext context = listener.GetContext(); 
-                Thread thread = new Thread(() => HandleRequest(context));
-                thread.Start();
+                HttpListenerContext context = listener.GetContext();
+                ThreadPool.QueueUserWorkItem(HandleRequest, context);
             }
         }
 
-        private void HandleRequest(HttpListenerContext context)
+        private void HandleRequest(object state)
         {
-            string filename = context.Request.Url.AbsolutePath.Substring(1);
+            var context = (HttpListenerContext)state;
+            string filename = context.Request.Url.AbsolutePath.TrimStart('/');
             string rootDirectory = Directory.GetCurrentDirectory();
 
             Console.WriteLine("Requested: " + filename);
 
-            if (cache.ContainsKey(filename))
-            {
-                Console.WriteLine("Serving from cache: " + filename);
-                ServeFile(context, cache[filename]);
-            }
-            else
+            byte[] fileData;
+            if (!cache.TryGetValue(filename, out fileData))
             {
                 string filePath = SearchForGif(rootDirectory, filename);
                 if (filePath != null)
                 {
-                    byte[] fileData = File.ReadAllBytes(filePath);
-                    cache[filename] = fileData; 
-                    Console.WriteLine("Serving from disk and caching: " + filename);
-                    ServeFile(context, fileData);
+                    fileData = File.ReadAllBytes(filePath);
+                    cache.TryAdd(filename, fileData); // Add to cache using thread-safe method
+                    Console.WriteLine("Loaded from disk and cached: " + filename);
                 }
-                else
+            }
+
+            if (fileData != null)
+            {
+                ServeFile(context, fileData);
+            }
+            else
+            {
+                Console.WriteLine("File not found: " + filename);
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
                 {
-                    Console.WriteLine("File not found: " + filename);
-                    context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                    using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
-                    {
-                        writer.Write("Gif not found: " + filename);
-                    }
-                    context.Response.OutputStream.Close();
+                    writer.Write("Gif not found: " + filename);
                 }
+                context.Response.OutputStream.Close();
             }
         }
 
@@ -79,7 +79,10 @@ namespace Projekat_PrviDeo
                 Console.WriteLine("Error serving file: " + e.Message);
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
-            context.Response.OutputStream.Close();
+            finally
+            {
+                context.Response.OutputStream.Close();
+            }
         }
 
         private string SearchForGif(string rootPath, string filename)
