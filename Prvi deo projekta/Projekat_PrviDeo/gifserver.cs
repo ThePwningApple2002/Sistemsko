@@ -8,7 +8,7 @@ namespace Projekat_PrviDeo
     public class GifServer
     {
         private HttpListener listener;
-        private readonly object fileLock = new object(); // Objekat za lock
+        private readonly object fileLock = new object();
 
         public GifServer()
         {
