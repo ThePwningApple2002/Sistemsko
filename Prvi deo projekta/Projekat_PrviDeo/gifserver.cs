@@ -8,7 +8,7 @@ namespace Projekat_PrviDeo
     public class GifServer
     {
         private HttpListener listener;
-        private readonly object fileLock = new object(); // Lock object
+        private readonly object fileLock = new object(); // Objekat za lock
 
         public GifServer()
         {
@@ -36,22 +36,35 @@ namespace Projekat_PrviDeo
 
             Console.WriteLine("Requested: " + filename);
 
-            string filePath = SearchForGif(rootDirectory, filename);
-            if (filePath != null)
+            byte[] fileData = GetFileData(rootDirectory, filename);
+            if (fileData != null)
             {
-                byte[] fileData = ReadFile(filePath);
-                if (fileData != null)
-                {
-                    ServeFile(context, fileData);
-                }
-                else
-                {
-                    SendNotFound(context, filename);
-                }
+                ServeFile(context, fileData);
             }
             else
             {
                 SendNotFound(context, filename);
+            }
+        }
+
+        private byte[] GetFileData(string rootPath, string filename)
+        {
+            lock (fileLock) 
+            {
+                string filePath = SearchForGif(rootPath, filename);
+                if (filePath != null)
+                {
+                    try
+                    {
+                        return File.ReadAllBytes(filePath);
+                    }
+                    catch (IOException e)
+                    {
+                        Console.WriteLine("Failed to read file: " + e.Message);
+                        return null;
+                    }
+                }
+                return null;
             }
         }
 
@@ -74,22 +87,6 @@ namespace Projekat_PrviDeo
             }
         }
 
-        private byte[] ReadFile(string filePath)
-        {
-            lock (fileLock) 
-            {
-                try
-                {
-                    return File.ReadAllBytes(filePath);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Error reading file: " + e.Message);
-                    return null;
-                }
-            }
-        }
-
         private void SendNotFound(HttpListenerContext context, string filename)
         {
             context.Response.StatusCode = (int)HttpStatusCode.NotFound;
@@ -102,17 +99,20 @@ namespace Projekat_PrviDeo
 
         private string SearchForGif(string rootPath, string filename)
         {
-            try
+            lock (fileLock)
             {
-                string[] files = Directory.GetFiles(rootPath, filename, SearchOption.AllDirectories);
-                if (files.Length > 0)
-                    return files[0];
+                try
+                {
+                    string[] files = Directory.GetFiles(rootPath, filename, SearchOption.AllDirectories);
+                    if (files.Length > 0)
+                        return files[0];
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error searching file: " + e.Message);
+                }
+                return null;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error searching file: " + e.Message);
-            }
-            return null;
         }
     }
 }
