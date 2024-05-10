@@ -2,20 +2,18 @@
 using System.IO;
 using System.Net;
 using System.Threading;
-using System.Collections.Concurrent;
 
 namespace Projekat_PrviDeo
 {
     public class GifServer
     {
         private HttpListener listener;
-        private ConcurrentDictionary<string, byte[]> cache;
+        private readonly object fileLock = new object(); // Lock object
 
         public GifServer()
         {
             listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:5050/");
-            cache = new ConcurrentDictionary<string, byte[]>();
         }
 
         public void Start()
@@ -38,31 +36,22 @@ namespace Projekat_PrviDeo
 
             Console.WriteLine("Requested: " + filename);
 
-            byte[] fileData;
-            if (!cache.TryGetValue(filename, out fileData))
+            string filePath = SearchForGif(rootDirectory, filename);
+            if (filePath != null)
             {
-                string filePath = SearchForGif(rootDirectory, filename);
-                if (filePath != null)
+                byte[] fileData = ReadFile(filePath);
+                if (fileData != null)
                 {
-                    fileData = File.ReadAllBytes(filePath);
-                    cache.TryAdd(filename, fileData); // Add to cache using thread-safe method
-                    Console.WriteLine("Loaded from disk and cached: " + filename);
+                    ServeFile(context, fileData);
                 }
-            }
-
-            if (fileData != null)
-            {
-                ServeFile(context, fileData);
+                else
+                {
+                    SendNotFound(context, filename);
+                }
             }
             else
             {
-                Console.WriteLine("File not found: " + filename);
-                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-                using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
-                {
-                    writer.Write("Gif not found: " + filename);
-                }
-                context.Response.OutputStream.Close();
+                SendNotFound(context, filename);
             }
         }
 
@@ -83,6 +72,32 @@ namespace Projekat_PrviDeo
             {
                 context.Response.OutputStream.Close();
             }
+        }
+
+        private byte[] ReadFile(string filePath)
+        {
+            lock (fileLock) 
+            {
+                try
+                {
+                    return File.ReadAllBytes(filePath);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error reading file: " + e.Message);
+                    return null;
+                }
+            }
+        }
+
+        private void SendNotFound(HttpListenerContext context, string filename)
+        {
+            context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+            using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
+            {
+                writer.Write("Gif not found: " + filename);
+            }
+            context.Response.OutputStream.Close();
         }
 
         private string SearchForGif(string rootPath, string filename)
