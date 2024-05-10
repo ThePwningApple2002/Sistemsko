@@ -1,49 +1,75 @@
-﻿
-using System;
+﻿using System;
 using System.IO;
 using System.Net;
 using System.Threading;
+using System.Collections.Generic;
 
-
-namespace Projekat_PrviDeo;
-
-
-public class GifServer
+namespace Projekat_PrviDeo
 {
-    private HttpListener listener;
-
-    public GifServer()
+    public class GifServer
     {
-        listener = new HttpListener();
-        listener.Prefixes.Add("http://localhost:5050/");
-    }
+        private HttpListener listener;
+        private Dictionary<string, byte[]> cache;
 
-    public void Start()
-    {
-        listener.Start();
-        Console.WriteLine("Listening...");
-
-        while (true)
+        public GifServer()
         {
-            HttpListenerContext context = listener.GetContext();
-            Thread thread = new Thread(() => HandleRequest(context));
-            thread.Start();
+            listener = new HttpListener();
+            listener.Prefixes.Add("http://localhost:5050/");
+            cache = new Dictionary<string, byte[]>();
         }
-    }
 
-    private void HandleRequest(HttpListenerContext context)
-    {
-        string filename = context.Request.Url.AbsolutePath.Substring(1); 
-        string rootDirectory = Directory.GetCurrentDirectory();
+        public void Start()
+        {
+            listener.Start();
+            Console.WriteLine("Listening...");
 
-        Console.WriteLine(rootDirectory);
-        string filePath = SearchForGif(rootDirectory, filename);
+            while (true)
+            {
+                HttpListenerContext context = listener.GetContext(); 
+                Thread thread = new Thread(() => HandleRequest(context));
+                thread.Start();
+            }
+        }
 
-        if (filePath != null)
+        private void HandleRequest(HttpListenerContext context)
+        {
+            string filename = context.Request.Url.AbsolutePath.Substring(1);
+            string rootDirectory = Directory.GetCurrentDirectory();
+
+            Console.WriteLine("Requested: " + filename);
+
+            if (cache.ContainsKey(filename))
+            {
+                Console.WriteLine("Serving from cache: " + filename);
+                ServeFile(context, cache[filename]);
+            }
+            else
+            {
+                string filePath = SearchForGif(rootDirectory, filename);
+                if (filePath != null)
+                {
+                    byte[] fileData = File.ReadAllBytes(filePath);
+                    cache[filename] = fileData; 
+                    Console.WriteLine("Serving from disk and caching: " + filename);
+                    ServeFile(context, fileData);
+                }
+                else
+                {
+                    Console.WriteLine("File not found: " + filename);
+                    context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                    using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
+                    {
+                        writer.Write("Gif not found: " + filename);
+                    }
+                    context.Response.OutputStream.Close();
+                }
+            }
+        }
+
+        private void ServeFile(HttpListenerContext context, byte[] fileData)
         {
             try
             {
-                byte[] fileData = File.ReadAllBytes(filePath);
                 context.Response.ContentType = "image/gif";
                 context.Response.ContentLength64 = fileData.Length;
                 context.Response.OutputStream.Write(fileData, 0, fileData.Length);
@@ -53,32 +79,22 @@ public class GifServer
                 Console.WriteLine("Error serving file: " + e.Message);
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             }
+            context.Response.OutputStream.Close();
         }
-        else
+
+        private string SearchForGif(string rootPath, string filename)
         {
-            context.Response.StatusCode = (int)HttpStatusCode.NotFound;
-            using (StreamWriter writer = new StreamWriter(context.Response.OutputStream))
+            try
             {
-                writer.Write("Gif not found: " + filename);
+                string[] files = Directory.GetFiles(rootPath, filename, SearchOption.AllDirectories);
+                if (files.Length > 0)
+                    return files[0];
             }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error searching file: " + e.Message);
+            }
+            return null;
         }
-        context.Response.OutputStream.Close();
     }
-
-    private string SearchForGif(string rootPath, string filename)
-    {
-        try
-        {
-            string[] files = Directory.GetFiles(rootPath, filename, SearchOption.AllDirectories);
-            if (files.Length > 0)
-                return files[0];
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Error searching file: " + e.Message);
-        }
-        return null;
-    }
-
-
 }
