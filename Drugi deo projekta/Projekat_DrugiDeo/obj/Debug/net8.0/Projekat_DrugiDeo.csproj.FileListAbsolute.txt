@@ -1,0 +1,15 @@
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\bin\Debug\net8.0\Projekat_DrugiDeo.exe
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\bin\Debug\net8.0\Projekat_DrugiDeo.deps.json
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\bin\Debug\net8.0\Projekat_DrugiDeo.runtimeconfig.json
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\bin\Debug\net8.0\Projekat_DrugiDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\bin\Debug\net8.0\Projekat_DrugiDeo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.AssemblyInfoInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.AssemblyInfo.cs
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.csproj.CoreCompileInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.sourcelink.json
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\refint\Projekat_DrugiDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\Projekat_DrugiDeo.genruntimeconfig.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Drugi deo projekta\Projekat_DrugiDeo\obj\Debug\net8.0\ref\Projekat_DrugiDeo.dll

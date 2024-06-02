@@ -72,7 +72,7 @@ namespace Projekat_PrviDeo
         {
             try
             {
-                context.Response.ContentType = "image/gif";
+                context.Response.ContentType = "gif";
                 context.Response.ContentLength64 = fileData.Length;
                 context.Response.OutputStream.Write(fileData, 0, fileData.Length);
             }

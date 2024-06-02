@@ -12,3 +12,4 @@ E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\ob
 E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.pdb
 E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.genruntimeconfig.cache
 E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\ref\Projekat_PrviDeo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Prvi deo projekta\Projekat_PrviDeo\obj\Debug\net7.0\Projekat_PrviDeo.sourcelink.json
