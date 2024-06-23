@@ -1,0 +1,24 @@
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\treci deo.exe
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\treci deo.deps.json
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\treci deo.runtimeconfig.json
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\treci deo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\treci deo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\System.Reactive.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.csproj.AssemblyReference.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.GeneratedMSBuildEditorConfig.editorconfig
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.AssemblyInfoInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.AssemblyInfo.cs
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.csproj.CoreCompileInputs.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.sourcelink.json
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.csproj.Up2Date
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\refint\treci deo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.pdb
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\treci deo.genruntimeconfig.cache
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\obj\Debug\net8.0\ref\treci deo.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\System.Drawing.Common.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\WordCloudSharp.dll
+E:\Programiranje\Projekti za oop\Sistemsko\Treci deo projekta\treci deo\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll

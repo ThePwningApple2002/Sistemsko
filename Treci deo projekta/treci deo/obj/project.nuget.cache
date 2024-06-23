@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "cLx3fwbmuPo2LdInSuuKPNF3yoAjxuMHUQYtdAP1mEBLv5ao9miB6fMkwoSr/aD2wMzQANRe7+XGfy7+GfT87w==",
+  "success": true,
+  "projectFilePath": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\treci deo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.drawing.common\\8.0.6\\system.drawing.common.8.0.6.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\system.reactive\\6.0.1\\system.reactive.6.0.1.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\wordcloudsharp\\1.1.0\\wordcloudsharp.1.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

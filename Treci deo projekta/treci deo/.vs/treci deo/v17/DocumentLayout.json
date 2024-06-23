@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|e:\\programiranje\\projekti za oop\\sistemsko\\treci deo projekta\\treci deo\\cocktailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|solutionrelative:cocktailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|e:\\programiranje\\projekti za oop\\sistemsko\\treci deo projekta\\treci deo\\ingredientanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|solutionrelative:ingredientanalyzer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|e:\\programiranje\\projekti za oop\\sistemsko\\treci deo projekta\\treci deo\\resultvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|solutionrelative:resultvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|e:\\programiranje\\projekti za oop\\sistemsko\\treci deo projekta\\treci deo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7AE17B1B-47F3-4094-B6BA-DB6AAF933B3B}|treci deo.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ResultVisualizer.cs",
+              "DocumentMoniker": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\ResultVisualizer.cs",
+              "RelativeDocumentMoniker": "ResultVisualizer.cs",
+              "ToolTip": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\ResultVisualizer.cs",
+              "RelativeToolTip": "ResultVisualizer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T08:15:40.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CocktailService.cs",
+              "DocumentMoniker": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\CocktailService.cs",
+              "RelativeDocumentMoniker": "CocktailService.cs",
+              "ToolTip": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\CocktailService.cs",
+              "RelativeToolTip": "CocktailService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T08:14:46.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IngredientAnalyzer.cs",
+              "DocumentMoniker": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\IngredientAnalyzer.cs",
+              "RelativeDocumentMoniker": "IngredientAnalyzer.cs",
+              "ToolTip": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\IngredientAnalyzer.cs",
+              "RelativeToolTip": "IngredientAnalyzer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-23T08:02:54.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Programiranje\\Projekti za oop\\Sistemsko\\Treci deo projekta\\treci deo\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-22T19:31:06.13Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
